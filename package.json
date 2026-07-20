@@ -12,7 +12,8 @@
   "type": "module",
   "scripts": {
     "dev": "dotenv next dev --turbo",
-    "build": "npm-run-all check-env build-db check-db build-tracker build-recorder build-geo build-app",
+    "build": "node scripts/build-vercel-debug.mjs",
+    "build:main": "npm-run-all check-env build-db check-db build-tracker build-recorder build-geo build-app",
     "start": "next start",
     "build-docker": "npm-run-all build-db build-tracker build-recorder build-geo build-app",
     "start-docker": "npm-run-all check-db update-tracker start-server",
@@ -158,6 +159,7 @@
     "tsup": "^8.5.0",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.8",
+    "why-is-node-running": "^3.2.0"
   }
 }
